@@ -24,12 +24,15 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li><a href="profile.html">Profile</a></li>
   </ul>
  <a href="booktable.html" class="btn glow">Book a Table</a>
 <a href="shop.html" class="btn glow">Shop Now</a>
-
 </nav>
-
+<div class="auth-buttons">
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="signup.html" class="btn-signup">Sign Up</a>
+  </div>
 <!-- Toggle Button -->
 <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
@@ -44,6 +47,8 @@
 
     <!-- User info -->
      <h2 id="userName">Anirban Das</h2>
+     <input type="text" id="nameInput" placeholder="Enter new name" />
+<button onclick="updateName()">Update Name</button>
     <h3 id="userEmail">adas@example.com </h3>
     <p id="orderDate">Last Order: 20 June 2025</p>
 <input type="email" id="emailInput" placeholder="Enter new email" />
@@ -562,6 +567,14 @@
     if (file) reader.readAsDataURL(file);
   }
 
+ function updateName() {
+    const newName = document.getElementById('nameInput').value.trim();
+    if (newName !== '') {
+      document.getElementById('userName').textContent = newName;
+    } else {
+      alert("Please enter a valid name.");
+    }
+  }
   // Remove photo from localStorage
   function removePhoto() {
     localStorage.removeItem('userPhoto');

@@ -37,6 +37,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   font-family: 'Segoe UI', sans-serif;
+  position:relative ;
 }
 
 .navbar .logo {
@@ -1446,3 +1447,47 @@ body[data-theme="dark"] {
   background-color: #ff4d4d;
   color: #fff;
 }
+
+.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-login, .btn-signup {
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f04f4f, lch(67.88% 46.97 296.95));
+  box-shadow: 0 0 12px rgba(127, 133, 207, 0.6);
+  transition: all 0.4s ease;
+}
+
+.btn-login:hover, .btn-signup:hover {
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.9);
+  transform: scale(1.05);
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,105,180, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(255,105,180, 0.9); }
+}
+
+.btn-login, .btn-signup {
+  animation: glowPulse 2s infinite;
+}
+
+.sidebar input {
+  width: 200px; 
+  height: 45px;     
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
