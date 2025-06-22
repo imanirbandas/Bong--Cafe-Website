@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Bong Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #fff3e0, #ffe0b2);
+      color: #333;
+      overflow-x: hidden;
+    }
+    .navbar {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.7s ease forwards;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .navbar h1 {
+      color: #bf360c;
+      font-family: 'Playfair Display', serif;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #444;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #d84315;
+      transform: scale(1.05);
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      background: linear-gradient(135deg, #ffe0b2, #fff8e1);
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero .text {
+      flex: 1;
+      padding-right: 30px;
+    }
+    .hero .text h2 {
+      font-size: 3rem;
+      color: #6d4c41;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+      animation: typing 2s steps(30, end);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #6d4c41;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .hero .text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    .hero img {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      animation: scaleIn 1.5s ease;
+    }
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .features {
+      text-align: center;
+      padding: 60px 30px;
+      background: #fff3e0;
+    }
+    .features h3 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      color: #b71c1c;
+      animation: floatText 1s ease-in-out;
+    }
+    @keyframes floatText {
+      0% { transform: translateY(-10px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .features ul {
+      list-style: none;
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #555;
+      max-width: 600px;
+      margin: auto;
+      padding: 0;
+    }
+    .features ul li::before {
+      content: "\1F680";
+      margin-right: 10px;
+    }
+    .ai-assist {
+      text-align: center;
+      padding: 30px;
+      font-size: 1rem;
+      color: #666;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #bf360c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Bong Cafe</h1>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="hero">
+    <div class="text">
+      <h2>Welcome to Bong Cafe</h2>
+      <p>Where tradition meets taste. Experience authentic Bengali flavors with modern charm. Affordable, hygienic, and made with love — that’s our promise to you.</p>
+    </div>
+    <img src="https://media.istockphoto.com/id/1163284610/photo/very-stylish-indian-gourmet-restaurant.webp?a=1&b=1&s=612x612&w=0&k=20&c=XlqziPp1tIlKB8EANCp2ix616tPZcHgNdIGbQuRAPGE=" alt="Cafe Welcome">
+  </section>
+
+  <section class="features">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>Fresh & Hygienic Ingredients</li>
+      <li>Quick & Friendly Service</li>
+      <li>Affordable & Quality Meals</li>
+      <li>Variety of Veg & Non-Veg Dishes</li>
+      <li>Ice Creams, Juices, Starters & More</li>
+    </ul>
+  </section>
+
+  <div class="ai-assist">✨ AI-enhanced service ensures fast response, smart recommendations, and smooth order tracking experience at Bong Cafe.</div>
+
+  <footer>
+    &copy; 2025 Bong Cafe. All rights reserved.
+  </footer>
+</body>
+</html>

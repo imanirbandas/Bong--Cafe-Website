@@ -1,0 +1,121 @@
+<!-- settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - Bong Café</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f0f0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .settings-container {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+      animation: fadeSlide 0.8s ease-out;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #6a1b9a;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .setting-item {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #fafafa;
+    }
+
+    select:focus, button:focus {
+      outline: none;
+      border-color: #6a1b9a;
+      box-shadow: 0 0 6px rgba(106, 27, 154, 0.4);
+    }
+
+    .note {
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <h2>⚙️ Settings</h2>
+
+    <div class="setting-item">
+      <label for="themeSelect">Theme Mode</label>
+      <select id="themeSelect" onchange="changeTheme()">
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+      </select>
+    </div>
+
+    <div class="setting-item">
+      <label for="languageSelect">Language</label>
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="bn">বাংলা</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+
+    <div class="note">Your preferences are saved locally and apply across Bong Café.</div>
+  </div>
+
+  <script>
+    // Apply saved preferences
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedLang = localStorage.getItem('language') || 'en';
+    document.getElementById('themeSelect').value = savedTheme;
+    document.getElementById('languageSelect').value = savedLang;
+    document.body.setAttribute('data-theme', savedTheme);
+
+    function changeTheme() {
+      const theme = document.getElementById('themeSelect').value;
+      localStorage.setItem('theme', theme);
+      document.body.setAttribute('data-theme', theme);
+    }
+
+    function changeLanguage() {
+      const lang = document.getElementById('languageSelect').value;
+      localStorage.setItem('language', lang);
+      alert('🌐 Language changed to ' + (lang === 'bn' ? 'বাংলা' : lang === 'hi' ? 'हिन्दी' : 'English'));
+    }
+  </script>
+</body>
+</html>

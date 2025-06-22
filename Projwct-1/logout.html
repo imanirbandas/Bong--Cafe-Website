@@ -1,0 +1,76 @@
+
+<!-- logout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout - Bong Café</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logout-box {
+      background: #fff;
+      padding: 40px 60px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    a.button {
+      display: inline-block;
+      background: linear-gradient(to right, #6a1b9a, #ab47bc);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: linear-gradient(to right, #4a148c, #7b1fa2);
+      box-shadow: 0 0 12px #c471ed;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-box">
+    <h2>👋 You have been logged out</h2>
+    <p>Thank you for visiting Bong Café. We hope to see you again soon!</p>
+    <a href="login.html" class="button">Go to Login</a>
+  </div>
+
+  <script>
+    // Clear session or localStorage if needed
+    localStorage.removeItem('userEmail');
+    // Optionally remove orders, theme, language, etc.
+    // localStorage.clear(); // if you want to clear everything
+  </script>
+</body>
+</html>

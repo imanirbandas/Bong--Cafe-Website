@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Bong Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      font-family: 'Playfair Display', serif;
+      color: #b71c1c;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #d84315;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #6d4c41;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      background: #fff7f0;
+    }
+    .service-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: #bf360c;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      header h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Bong Cafe</h1>
+    <ul>
+      <li><a href="index2.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a class="active" href="#">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Our Services</h2>
+    <p>We serve with love and excellence to deliver you unforgettable experiences at Bong Cafe.</p>
+  </header>
+
+  <section class="services">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Dine In">
+      <h3>Dine-In</h3>
+      <p>Enjoy a cozy and homely atmosphere with great food served hot and fresh.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2972/2972149.png" alt="Takeaway">
+      <h3>Takeaway</h3>
+      <p>Order and grab your favorite meals on the go, always packed with care.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/562/562678.png" alt="Delivery">
+      <h3>Home Delivery</h3>
+      <p>Get your meals delivered at your doorstep piping hot and on time.</p>
+    </div>
+    <div class="service-card">
+  <img src="https://images.unsplash.com/photo-1731311979344-a6f3c3435429?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNhdGVyaW5nJTIwaWNvbnxlbnwwfHwwfHx8MA%3D%3D" alt="Catering Icon">
+  <h3>Catering</h3>
+  <p>We offer catering for parties, corporate events, and special occasions.</p>
+</div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046799.png" alt="Online Order">
+      <h3>Online Order</h3>
+      <p>Place your order online through our app or website quickly and easily.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2550/2550384.png" alt="Custom Meals">
+      <h3>Custom Meals</h3>
+      <p>Have special dietary needs? Let us know and we’ll make it happen!</p>
+    </div>
+  </section>
+</body>
+</html>
+
+c:\Users\Anirban Das\Pictures\catering icon.png

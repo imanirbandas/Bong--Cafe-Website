@@ -1,0 +1,218 @@
+
+<!-- orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - Bong Café</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    body[data-theme="dark"] {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .orders-container {
+      max-width: 960px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeSlide 0.8s ease-out;
+      border: 1px solid rgba(106, 27, 154, 0.2);
+    }
+
+    body[data-theme="dark"] .orders-container {
+      background: rgba(40, 40, 40, 0.9);
+      color: #eee;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #6a1b9a;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    body[data-theme="dark"] table {
+      background: #2c2c2c;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3e5f5;
+      color: #4a148c;
+      font-size: 16px;
+    }
+
+    body[data-theme="dark"] th {
+      background-color: #3a3a3a;
+      color: #e1bee7;
+    }
+
+    td {
+      color: #333;
+    }
+
+    body[data-theme="dark"] td {
+      color: #eee;
+    }
+
+    tr:hover {
+      background-color: #fafafa;
+    }
+
+    body[data-theme="dark"] tr:hover {
+      background-color: #333;
+    }
+
+    .total-summary {
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: right;
+      font-weight: bold;
+      color: #4a148c;
+    }
+  </style>
+</head>
+<body>
+  <div class="orders-container">
+    <h2 id="welcomeText">📦 Your Order History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Items</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTableBody"></tbody>
+    </table>
+    <div class="total-summary" id="totalAmount"></div>
+  </div>
+
+  <ul class="sidebar-menu" style="display:none;">
+    <li><a href="dashboard.html" id="navDashboard">Dashboard</a></li>
+    <li><a href="orders.html" id="navOrders">My Orders</a></li>
+    <li><a href="settings.html" id="navSettings">Settings</a></li>
+    <li><a href="logout.html" id="navLogout">Logout</a></li>
+  </ul>
+
+  <script>
+    const mockOrders = [
+      { date: '2025-06-01', items: ['Burger', 'Fries'], amount: 150 },
+      { date: '2025-06-10', items: ['Coffee', 'Croissant'], amount: 120 },
+      { date: '2025-06-18', items: ['Pizza', 'Coke'], amount: 200 }
+    ];
+
+    if (!localStorage.getItem('orders')) {
+      localStorage.setItem('orders', JSON.stringify(mockOrders));
+    }
+
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    const tbody = document.getElementById('ordersTableBody');
+    const totalEl = document.getElementById('totalAmount');
+
+    let totalBill = 0;
+
+    if (orders.length === 0) {
+      const row = document.createElement('tr');
+      row.innerHTML = '<td colspan="4" style="text-align:center; color:#999;">No orders yet.</td>';
+      tbody.appendChild(row);
+    } else {
+      orders.forEach((order, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${order.date}</td>
+          <td>${order.items.join(', ')}</td>
+          <td>₹${order.amount}</td>
+        `;
+        totalBill += order.amount;
+        tbody.appendChild(row);
+      });
+      totalEl.textContent = `Total Bill: ₹${totalBill}`;
+    }
+  </script>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+
+    const savedLang = localStorage.getItem('language') || 'en';
+
+    const translations = {
+      en: {
+        welcome: "📦 Your Order History",
+        navDashboard: "Dashboard",
+        navOrders: "My Orders",
+        navSettings: "Settings",
+        navLogout: "Logout"
+      },
+      bn: {
+        welcome: "📦 আপনার অর্ডার ইতিহাস",
+        navDashboard: "ড্যাশবোর্ড",
+        navOrders: "আমার অর্ডার",
+        navSettings: "সেটিংস",
+        navLogout: "লগআউট"
+      },
+      hi: {
+        welcome: "📦 आपका ऑर्डर इतिहास",
+        navDashboard: "डैशबोर्ड",
+        navOrders: "मेरे ऑर्डर",
+        navSettings: "सेटिंग्स",
+        navLogout: "लॉगआउट"
+      }
+    };
+
+    const text = translations[savedLang];
+    if (text) {
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = value;
+      };
+
+      setText('welcomeText', text.welcome);
+      setText('navDashboard', text.navDashboard);
+      setText('navOrders', text.navOrders);
+      setText('navSettings', text.navSettings);
+      setText('navLogout', text.navLogout);
+    }
+  </script>
+</body>
+</html>

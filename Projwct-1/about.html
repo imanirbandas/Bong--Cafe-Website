@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Bong Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #fffaf5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar h1 {
+      font-family: 'Playfair Display', serif;
+      color: #bf360c;
+      margin: 0;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #444;
+      padding-bottom: 5px;
+      transition: 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #d84315;
+      border-bottom: 2px solid #d84315;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    }
+
+    .hero .left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .hero .left h2 {
+      font-size: 3.5rem;
+      color: #bf360c;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+
+    .hero .left p {
+      font-size: 1.3rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .hero .right {
+      flex: 1;
+    }
+
+    .hero .right img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateX(100px);
+      animation: slideInRight 1.2s ease-out forwards;
+    }
+
+    @keyframes slideInRight {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .mission-vision {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 60px 40px;
+      gap: 40px;
+      background: #fff;
+    }
+
+    .mv-box {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .mv-box img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+    }
+
+    .mv-box.mission img {
+      transform: translateX(-80px);
+      animation: slideInLeft 1.2s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .mv-box.vision img {
+      transform: translateX(80px);
+      animation: slideInLeftReverse 1.2s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideInLeft {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeftReverse {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .mv-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #5d4037;
+    }
+
+    .mv-box p {
+      font-size: 1.15rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero .left {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+
+      .hero .right img {
+        margin: 0 auto;
+      }
+
+      .mission-vision {
+        flex-direction: column;
+      }
+
+      .mv-box img {
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Bong Cafe</h1>
+    <ul>
+      <li><a href="index2.html">Home</a></li>
+      <li><a class="active" href="about.html">About Us</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      
+    </ul>
+  </div>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="left">
+      <h2>OUR STORY</h2>
+      <p>
+        Welcome to Bong Cafe, where tradition meets taste. We offer delicious food, friendly staff, a cozy atmosphere, and positive emotions! Our café is more than just a place to eat — it’s a space to relax, reconnect, and recharge with great food and vibes.
+      </p>
+    </div>
+    <div class="right">
+      <img src="https://media.istockphoto.com/id/1131393938/photo/very-stylish-indian-gourmet-restaurant.webp?a=1&b=1&s=612x612&w=0&k=20&c=Nja6_FL1Ww89l03D-Nyex4f-3PBN_IYfDp_6J3UH5Cs=" alt="Restaurant Banner">
+    </div>
+  </section>
+
+  <!-- Mission and Vision -->
+  <section class="mission-vision">
+    <div class="mv-box mission">
+      <h1>Our Mission</h1>
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdHVyYW50JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D"alt="Mission">
+      <h4>To help our customers enjoy simple edible pleasures and reach their hearts through their stomachs.</h4>
+    </div>
+    <div class="mv-box vision">
+      <h1>Our Vision</h1>
+      <img src="https://plus.unsplash.com/premium_photo-1670740967011-86730910a2e5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdHVyYW50JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Vision">
+      <h4>To create an ultimate destination for every food lover in town and lead them to an extraordinary food journey.</h4>
+    </div>
+  </section>
+
+
+</body>
+</html>

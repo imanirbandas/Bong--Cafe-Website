@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Bong Café</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f9f9f9;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1600') no-repeat center center;
+      background-size: cover;
+      filter: blur(6px);
+      z-index: -1;
+    }
+
+    .dashboard-container {
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 960px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1.2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+      color: #ad76cf;
+      font-size: 28px;
+      animation: glowText 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from {
+        text-shadow: 0 0 6px #b388eb, 0 0 12px #ab47bc;
+      }
+      to {
+        text-shadow: 0 0 12px #fff, 0 0 20px #e9e287;
+      }
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    }
+
+    .card h3 {
+      color: #4a148c;
+      margin-bottom: 10px;
+    }
+
+    .logout-btn {
+      margin-top: 30px;
+      background: linear-gradient(to right, #6a1b9a, #ab47bc);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(to right, #4a148c, #7b1fa2);
+      box-shadow: 0 0 12px #c471ed;
+    }
+
+    .sidebar-menu {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1 id="welcomeText">Welcome to Bong Café Dashboard</h1>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3 id="navDashboard">🧑 Profile</h3>
+        <p>View and edit your profile details.</p>
+      </div>
+      <div class="card">
+        <h3 id="navOrders">📦 Orders</h3>
+        <p>Track your current and past orders.</p>
+      </div>
+      <div class="card">
+        <h3 id="navSettings">⚙️ Settings</h3>
+        <p>Manage your preferences and account.</p>
+      </div>
+      <div class="card">
+        <h3 id="navLogout">📬 Messages</h3>
+        <p>View messages or notifications.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      alert("👋 Logged out successfully!");
+      window.location.href = 'index2.html';
+    }
+  </script>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+
+    const savedLang = localStorage.getItem('language') || 'en';
+
+    const translations = {
+      en: {
+        welcome: "Welcome to Bong Café Dashboard",
+        navDashboard: "Profile",
+        navOrders: "My Orders",
+        navSettings: "Settings",
+        navLogout: "Messages"
+      },
+      bn: {
+        welcome: "বং ক্যাফে ড্যাশবোর্ডে স্বাগতম",
+        navDashboard: "প্রোফাইল",
+        navOrders: "আমার অর্ডার",
+        navSettings: "সেটিংস",
+        navLogout: "বার্তা"
+      },
+      hi: {
+        welcome: "बोंग कैफे डैशबोर्ड में आपका स्वागत है",
+        navDashboard: "प्रोफाइल",
+        navOrders: "मेरे ऑर्डर",
+        navSettings: "सेटिंग्स",
+        navLogout: "संदेश"
+      }
+    };
+
+    const text = translations[savedLang];
+    if (text) {
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = value;
+      };
+
+      setText('welcomeText', text.welcome);
+      setText('navDashboard', text.navDashboard);
+      setText('navOrders', text.navOrders);
+      setText('navSettings', text.navSettings);
+      setText('navLogout', text.navLogout);
+    }
+  </script>
+</body>
+</html>

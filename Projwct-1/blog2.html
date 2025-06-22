@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Lassi Is a Punjabi Essential | Bong Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(145deg, #fff0f5, #ffe4e1);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .blog-container {
+      max-width: 850px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+     
+      box-shadow: 0 15px 30px rgba(255, 99, 71, 0.2);
+      animation: floatCard 1.5s ease;
+    }
+
+    @keyframes floatCard {
+      from { transform: translateY(30px);  opacity: 0; }
+      to { transform: translateY(0) ; opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #7b1fa2;
+    }
+
+    .blog-img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 30px;
+      border: 4px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #ff6ec4, #7873f5) border-box;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+      transition: transform 0.4s ease;
+    }
+
+    .blog-img:hover {
+      transform: scale(1.08) rotate(1deg);
+    }
+
+    p {
+      font-size: 16.5px;
+      color: #444;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.4s; }
+    p:nth-of-type(2) { animation-delay: 0.8s; }
+    p:nth-of-type(3) { animation-delay: 1.2s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #c2185b;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    a.back-link:hover {
+      border-bottom: 2px solid #c2185b;
+      transform: translateX(-5px);
+    }
+
+    .ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4a148c;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeInChat 1.5s ease;
+    }
+
+    @keyframes fadeInChat {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .blog-img {
+        width: 200px;
+        height: 200px;
+      }
+      .blog-container {
+        transform: none;
+        margin: 30px 10px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-container">
+    <h1>Meet Our Chefs</h1>
+
+    <img src="https://plus.unsplash.com/premium_photo-1661721578455-d13b23ec66c8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwY2hlZnxlbnwwfHwwfHx8MA%3D%3D"
+         alt="Punjabi Lassi" class="blog-img">
+
+    <p>
+      At Bong Cafe, our chefs are more than just culinary experts—they are artists who take pride in every dish they create. With years of experience and qualifications from reputed culinary schools, they bring world-class techniques and Bengali tradition together.
+    </p>
+    <p>
+      Hygiene and kitchen cleanliness are our top priorities. Our chefs strictly follow food safety standards and maintain spotless kitchen practices to ensure every plate served is safe, fresh, and delightful.
+    </p>
+    <p>
+      From the moment you place an order, our team coordinates with speed and precision to deliver your meal quickly, while never compromising on taste or presentation. Their passion, discipline, and integrity are the heart of Bong Cafe’s reputation.
+    </p>
+
+    <a href="index2.html#blog" class="back-link">← Back to Blog</a>
+  </div>
+
+  <div class="ai-chatbot">
+    🤖 Craving something cool like lassi?
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5 Perfect Café Vibes for Instagram | Bong Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, rgba(238, 174, 202, 0.6), rgba(148, 187, 233, 0.6));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+}
+
+    .blog-container {
+      max-width: 880px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      backdrop-filter: blur(12px);
+      animation: fadeInUp 1.3s ease;
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .blog-img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: block;
+      border: 6px solid transparent;
+      background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #f3ec78, #af4261, #00c9ff) border-box;
+      background-size: 300% 300%;
+      animation: borderMove 4s linear infinite;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    }
+
+    @keyframes borderMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p {
+      font-size: 16.5px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #0d47a1;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    a.back-link:hover {
+      border-color: #0d47a1;
+      transform: translateX(-4px);
+    }
+
+    .ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #263238;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeInChat 1.5s ease;
+    }
+
+    @keyframes fadeInChat {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .blog-img {
+        width: 200px;
+        height: 200px;
+      }
+      .blog-container {
+        margin: 30px 10px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-container">
+    <h1>5 Perfect Café Vibes for Instagram</h1>
+
+    <img src="https://images.unsplash.com/photo-1740030325919-7b1821f3b377?w=400&auto=format&fit=crop&q=60"
+         alt="Instagram Café Vibe" class="blog-img">
+
+    <p>
+      In the world of Instagram, cafés aren't just about coffee anymore — they’re about **aesthetic vibes**. Whether it's fairy lights, rustic wooden tables, or cozy nooks, the environment plays a big role in the perfect Insta shot.
+    </p>
+    <p>
+      From indoor plants to latte art, soft jazz playing in the background to natural sunlight on white walls — these subtle elements create a picture-perfect backdrop.
+    </p>
+    <p>
+      At Bong Café, we’ve designed corners just for your reels and posts. So, grab your drink, snap a pic, and share the vibes with the world!
+    </p>
+
+    <a href="index2.html#blog" class="back-link">← Back to Blog</a>
+  </div>
+
+  <div class="ai-chatbot">
+    📸 Need help finding the best café corner?
+  </div>
+
+</body>
+</html>

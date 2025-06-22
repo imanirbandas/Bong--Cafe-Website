@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Journey | Bong Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+      color: #333;
+    }
+    .navbar {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      color: #bf360c;
+      font-family: 'Playfair Display', serif;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #d84315;
+    }
+    .container {
+      max-width: 850px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.3s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #6d4c41;
+      margin-bottom: 20px;
+    }
+    .blog-img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 0 30px rgba(255, 165, 0, 0.4);
+      animation: popIn 1.5s ease;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #b71c1c;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    a.back-link:hover {
+      border-color: #b71c1c;
+      transform: translateX(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Bong Cafe</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h2>Our Journey</h2>
+    <img class="blog-img" src="https://images.unsplash.com/photo-1666425282630-c6e716ae3203?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzdCUyMGZvb2QlMjBzaG9wfGVufDB8fDB8fHww" alt="Our Journey">
+    <p>
+      It all began with a dream—an idea to create a place where people could not only enjoy food but feel a deep connection to culture and community. Bong Cafe started as a small kitchen with a big heart in a quiet neighborhood.
+    </p>
+    <p>
+      With each meal served, we grew—not just in size but in our bond with our customers. Their stories, smiles, and support helped shape the identity of Bong Cafe as more than just a restaurant—it became a gathering spot, a cultural escape.
+    </p>
+    <p>
+      Today, we serve not just food but memories. From traditional Bengali delights to modern continental treats, our journey continues with the same passion that sparked it on day one. And we’re just getting started.
+    </p>
+    <a class="back-link" href="blog.html">← Back to Blog</a>
+  </div>
+</body>
+</html>

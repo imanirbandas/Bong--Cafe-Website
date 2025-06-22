@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bong Café</title>
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <header class="top-bar">
+    <p>Mon - Sat: 9:00 am - 19:00 pm / Closed on Weekends</p>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">☕ Bong Café</div>
+    <ul class="nav-links">
+      <li><a href="#home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="btn glow">Book a Table</button>
+  </nav>
+<!-- Toggle Button -->
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-profile">
+    <!-- Default image or saved image will load here -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn5rTTm75M167c37ISKjDQ1hn2CkDCNp7y1j9B0CgFE-In2bVIXkaxRcKMw9aejn-Db8Q&usqp=CAU" alt="Profile Photo" id="profilePhoto">
+    
+    <!-- Upload photo -->
+    <input type="file" id="photoInput" accept="image/*" onchange="uploadPhoto()" />
+
+    <!-- User info -->
+     <h2 id="userName">Anirban Das</h2>
+    <h3 id="userEmail">adas@example.com </h3>
+    <p id="orderDate">Last Order: 20 June 2025</p>
+<input type="email" id="emailInput" placeholder="Enter new email" />
+  <button onclick="updateEmail()">Update Email</button>
+    <!-- Remove photo button (optional) -->
+    <button onclick="removePhoto()">Remove Photo</button>
+  </div>
+
+  <ul class="sidebar-menu">
+  <li><a href="dashboard.html">Dashboard</a></li>
+  <li><a href="orders.html">My Orders</a></li>
+  <li><a href="settings.html">Settings</a></li>
+  <li><a href="logout.html">Logout</a></li>
+</ul>
+</div>
+
+<section class="countdown-offer">
+  <h2>🎉 Rath Yatra Special Offer 🎉</h2>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <p>Offer ends in:</p>
+  <div id="countdown">
+    <span id="days">00</span> Days
+    <span id="hours">00</span> Hours
+    <span id="minutes">00</span> Minutes
+    <span id="seconds">00</span> Seconds
+  </div>
+  <br />
+<button class="offer-btn" onclick="document.getElementById('rath-menu').scrollIntoView({ behavior: 'smooth' });">
+  👉 Click Here to View Menu
+</button>
+
+</section>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>WELCOME TO BONG CAFÉ</h2>
+      <h1 class="animate-text">Enjoy Your Day With Tasty and Healthier food </h1>
+      <p>Start your day with the rich aroma and warmth of our finest brew. Taste tradition with a twist.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">Book a Table</a>
+        <a href="#" class="btn-light">Visit Our Shop</a>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="Cafe Interior">
+    </div>
+    <div class="about-text">
+      <h2>About Bong Café</h2>
+      <p>
+        At Bong Café, we blend tradition with taste. Rooted in the warmth of Bengali hospitality, our café brings you the perfect cup of comfort. 
+        From locally sourced beans to a calm ambiance, we create a space where stories are shared and memories brewed.
+      </p>
+      <p>
+        Whether you're craving your morning espresso or a relaxing afternoon latte, our baristas are here to serve you with passion and a smile.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-carousel" id="menu">
+  <h2 class="menu-title">🍽️ Our Menu</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">⟨</button>
+
+    <div class="carousel-track">
+      <!-- Bengali -->
+      <div class="carousel-card">
+        <h3>Bengali Delights</h3>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1414729614/photo/sorshe-illish-or-hilsa-fish.webp?a=1&b=1&s=612x612&w=0&k=20&c=FMfxkHx3QuPkQEQwAtxQNp4ylSLdH0eQA8pWgs_WWOQ=" alt="Shorshe Ilish">
+          <div class="food-info">
+            <h4>Shorshe Ilish <span class="badge">Special</span></h4>
+            <p>₹350 | 1 plate</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1720787066625-ba5e3e3b8ca7" alt="Kosha Mangsho">
+          <div class="food-info">
+            <h4>Kosha Mangsho</h4>
+            <p>₹280 | 1 bowl</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1927881082/photo/delicious-anchovy-fish-fry-crispy-and-golden-brown-served-on-a-plate-with-garnish.webp?a=1&b=1&s=612x612&w=0&k=20&c=oTbDYmy9K_ZFu2KOoJViEDtvLzwCiOmijja7OTMeKaA=" alt="Beguni">
+          <div class="food-info">
+            <h4>Beguni</h4>
+            <p>₹60 | 4 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1680764955303-81618ecb67b5" alt="Mishti Doi">
+          <div class="food-info">
+            <h4>Mishti Doi</h4>
+            <p>₹40 | 1 cup</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Punjabi -->
+      <div class="carousel-card">
+        <h3>Punjabi Tadka</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398" alt="Butter Chicken">
+          <div class="food-info">
+            <h4>Butter Chicken <span class="badge">Special</span></h4>
+            <p>₹320 | 1 bowl</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/979914742/photo/chole-bhature-or-chick-pea-curry-and-fried-puri-served-in-terracotta-crockery-over-white.webp?a=1&b=1&s=612x612&w=0&k=20&c=8pmBVIcNb-GIFnsBT0sYqfy-YtzNq7pOqc6lQZgFOPo=" alt="Chole Bhature">
+          <div class="food-info">
+            <h4>Chole Bhature</h4>
+            <p>₹120 | 1 plate</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/2181204121/photo/a-closeup-picture-of-a-tasty-panner-tikka-served-in-a-plate-at-a-restaurant.webp?a=1&b=1&s=612x612&w=0&k=20&c=Z0lv5mXv1etq0yF2Zf-Io6o6FqM9ndD9Iy-BRiG6A_E=" alt="Paneer Tikka">
+          <div class="food-info">
+            <h4>Paneer Tikka</h4>
+            <p>₹150 | 6 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1692616717087-54ee6f6c7e8f" alt="Lassi">
+          <div class="food-info">
+            <h4>Lassi</h4>
+            <p>₹60 | 1 glass</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- American -->
+      <div class="carousel-card">
+        <h3>American Bites</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1603893662172-99ed0cea2a08" alt="Cheese Burger">
+          <div class="food-info">
+            <h4>Cheese Burger <span class="badge">Special</span></h4>
+            <p>₹180 | 1 pc</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1579637386361-e393367281da" alt="Grilled Sandwich">
+          <div class="food-info">
+            <h4>Grilled Sandwich</h4>
+            <p>₹120 | 1 pc</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://plus.unsplash.com/premium_photo-1672774750509-bc9ff226f3e8" alt="French Fries">
+          <div class="food-info">
+            <h4>French Fries</h4>
+            <p>₹90 | Medium</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767" alt="Chocolate Shake">
+          <div class="food-info">
+            <h4>Chocolate Shake</h4>
+            <p>₹100 | 1 glass</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special -->
+      <div class="carousel-card">
+        <h3>Today's Special</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1652595802737-56d08ad31f09" alt="Combo Thali">
+          <div class="food-info">
+            <h4>Combo Thali <span class="badge">Offer</span></h4>
+            <p>₹199 | Full Meal</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1642522538458-0ece1670d495" alt="Mango Cold Brew">
+          <div class="food-info">
+            <h4>Mango Cold Brew</h4>
+            <p>₹90 | 1 glass</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1283129519/photo/indian-bengali-sweet-baked-rasgulla-for-sale-at-a-sweet-shop.webp?a=1&b=1&s=612x612&w=0&k=20&c=bAzjP4f8UlSYi8efa_CU8nsTDaNsWSkcDgd5Tx0Zw_E=" alt="Baked Rasgulla">
+          <div class="food-info">
+            <h4>Baked Rasgulla</h4>
+            <p>₹70 | 2 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1666196389175-630e3b80ad91" alt="Latte BOGO">
+          <div class="food-info">
+            <h4>Buy 1 Get 1 Latte <span class="badge">BOGO</span></h4>
+            <p>₹150 | 2 cups</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rathyatra -->
+      <div class="carousel-card" id="rath-menu">
+        <h3>Rathyatra Special</h3>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1175706754/photo/closeup-shot-of-a-puja-veg-food-thali.webp?a=1&b=1&s=612x612&w=0&k=20&c=Aj5FtSyD5tG_8al37iM_rTPr78hplNpqhF_O7rs8ovw=" alt="Khichuri Bhog">
+          <div class="food-info">
+            <h4>Khichuri Bhog <span class="badge">Special</span></h4>
+            <p>₹99 | Moong dal & ghee rice</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1927881082/photo/delicious-anchovy-fish-fry-crispy-and-golden-brown-served-on-a-plate-with-garnish.webp?a=1&b=1&s=612x612&w=0&k=20&c=oTbDYmy9K_ZFu2KOoJViEDtvLzwCiOmijja7OTMeKaA=" alt="Beguni">
+          <div class="food-info">
+            <h4>Beguni</h4>
+            <p>₹49 | Eggplant fritters</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/2166556793/photo/rendang-jengkol-or-dogfruit-simmered-in-spices-and-coconut-milk-indonesian-traditional.webp?a=1&b=1&s=612x612&w=0&k=20&c=gBoT8gJMoX_UcXRunRsN33au89gEZudUHZ_7i8mmFVc=" alt="Chhena Poda">
+          <div class="food-info">
+            <h4>Chhena Poda</h4>
+            <p>₹89 | Odisha's sweet delight</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6Qr_fuvDoHpazjLzqfwCurR3-C0-0P5XjA" alt="Pakhala Bhata">
+          <div class="food-info">
+            <h4>Pakhala Bhata <span class="badge">Cooler</span></h4>
+            <p>₹119 | Fermented rice platter</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-btn next">⟩</button>
+  </div>
+</section>
+
+
+<section class="services" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1613453030956-2c433b6b5aaf?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGluZSUyMGlufGVufDB8fDB8fHww" alt="Dine-In">
+      <h3>Dine-In Experience</h3>
+      <p>Enjoy a warm, cozy ambience with authentic Bengali hospitality and flavors.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://media.istockphoto.com/id/1449490038/photo/online-shopping-and-e-commerce-technology-concept-shopper-using-computer-laptop-to-input.webp?a=1&b=1&s=612x612&w=0&k=20&c=UV8-hsrRpcoh3lhM-bqJixmZW6Fskg88aBjp-b151Mc=" alt="Online Ordering">
+      <h3>Online Ordering</h3>
+      <p>Order your favorite dishes from the comfort of your home with fast delivery.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://media.istockphoto.com/id/1025672954/photo/beautifully-decorated-catering-banquet-table-with-variety-of-different-food-snacks-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=r35Puyl_SGcDbcUb0i6J4fOa0nItTfhaiLFHunNWPes=" alt="Event Catering">
+      <h3>Event Catering</h3>
+      <p>From birthdays to corporate parties, we cater with love and delicious food.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1582557678431-d3b30ea0be05?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y3VzdG9tJTIwbWVudXxlbnwwfHwwfHx8MA%3D%3D" alt="Custom Menu">
+      <h3>Custom Menu</h3>
+      <p>Create personalized meal plans or combos with chef’s recommendations.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <h2 class="section-title">Our Blog</h2>
+  <div class="blog-grid">
+
+    <div class="blog-card">
+      <img src="https://media.istockphoto.com/id/1302647935/photo/female-food-photograpy-artist-making-her-cake-ready-for-shooting.webp?a=1&b=1&s=612x612&w=0&k=20&c=bAh0xbxnU6yBYQVaKXVskLZZrq5aMkjyWV1d0dkPgy0=" alt="Blog Post 1">
+      <div class="blog-content">
+        <h3>Bengali Flavors You Must Try</h3>
+        <p>Explore the richness of mustard, panch phoron, and sweets from Bengal's culinary heritage.</p>
+        <a href="blog1.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1620641606872-f9641b65adab?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwY2hlZnxlbnwwfHwwfHx8MA%3D%3D" alt="Blog Post 2">
+      <div class="blog-content">
+        <h3>Meet Our Chefs</h3>
+        <p> Behind every delicious dish at Bong Cafe stands a team of passionate chefs dedicated to culinary excellence. Our chefs are not only well-trained in classic and modern cooking styles, but they also hold certifications from top culinary institutes across India.</p>
+        <a href="blog2.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1740030325919-7b1821f3b377?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGluZGlhbiUyMGNhZmUlMjBpbnNpZGV8ZW58MHx8MHx8fDA%3D" alt="Blog Post 3">
+      <div class="blog-content">
+        <h3>5 Perfect Café Vibes for Instagram</h3>
+        <p>Learn how to pick the perfect corner and drink for that aesthetic café shot.</p>
+        <a href="blog3.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="contact-wrapper">
+
+    <!-- Contact Form -->
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message / Query" required></textarea>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+
+    <!-- Comments Box -->
+    <div class="comment-box">
+      <h3>Leave a Comment</h3>
+      <textarea placeholder="Write your thoughts..." rows="5"></textarea>
+      <button class="btn-submit">Post Comment</button>
+    </div>
+
+  </div>
+</section>
+<section class="branches" id="branches">
+  <h2 class="section-title">Our Branches</h2>
+
+  <div class="branch-grid">
+    <div class="branch">
+      <h3>Kolkata HQ</h3>
+      <p>6/2B, Bhawanipur Lane, Kolkata - 700025</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9392289114375!2d88.34861931495967!3d22.568519385179936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a80db5678f%3A0x6dc759b410c7e01!2sBhawanipur%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1623164800284!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="branch">
+      <h3>Delhi Café</h3>
+      <p>12 Connaught Place, New Delhi - 110001</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8383343073!2d77.06889989351128!3d28.527280343235934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce30950d56b7f%3A0xf6fa7f48c68ddf96!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1623164864606!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+<script>
+  // Set the date you're counting down to
+  const endDate = new Date("June 27, 2025 23:59:59").getTime();
+
+  const countdownFunc = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = endDate - now;
+
+    if (diff < 0) {
+      clearInterval(countdownFunc);
+      document.getElementById("countdown").innerHTML = "Offer Expired!";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  }, 1000);
+</script>
+
+<script>
+  const text = "Enjoy Your Day With Tasty and Healthier Food";
+  let i = 0;
+  const speed = 100;
+  const target = document.querySelector(".animate-text");
+  target.textContent = "";
+
+  function typeWriter() {
+    if (i < text.length) {
+      target.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.addEventListener('load', typeWriter);
+</script>
+
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const cards = document.querySelectorAll('.carousel-card');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth;
+    track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < cards.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', updateCarousel);
+</script>
+<script>
+  // Example: Replace with real logic
+  const user = {
+    email: 'mamoni@example.com',
+    photo: 'https://i.pravatar.cc/100',
+    orderDate: '20 June 2025'
+  };
+
+  document.getElementById('userEmail').innerText = user.email;
+  document.getElementById('profilePhoto').src = user.photo;
+  document.getElementById('orderDate').innerText = 'Last Order: ' + user.orderDate;
+</script>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.getElementById('mainContent');
+
+  function toggleSidebar() {
+    sidebar.classList.toggle('closed');
+    mainContent.classList.toggle('full');
+  }
+
+  // Set initial user data (optional)
+  document.getElementById('userEmail').innerText = 'mamoni@example.com';
+  document.getElementById('profilePhoto').src = 'https://i.pravatar.cc/100';
+  document.getElementById('orderDate').innerText = 'Last Order: 20 June 2025';
+</script>
+<script>
+  // Theme load from localStorage
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.body.setAttribute('data-theme', savedTheme);
+
+  // Language load from localStorage
+  const savedLang = localStorage.getItem('language') || 'en';
+
+  const translations = {
+    en: {
+      welcome: "Welcome to Bong Café Dashboard",
+      navDashboard: "Dashboard",
+      navOrders: "My Orders",
+      navSettings: "Settings",
+      navLogout: "Logout"
+    },
+    bn: {
+      welcome: "বং ক্যাফে ড্যাশবোর্ডে স্বাগতম",
+      navDashboard: "ড্যাশবোর্ড",
+      navOrders: "আমার অর্ডার",
+      navSettings: "সেটিংস",
+      navLogout: "লগআউট"
+    },
+    hi: {
+      welcome: "बोंग कैफे डैशबोर्ड में आपका स्वागत है",
+      navDashboard: "डैशबोर्ड",
+      navOrders: "मेरे ऑर्डर",
+      navSettings: "सेटिंग्स",
+      navLogout: "लॉगआउट"
+    }
+  };
+
+  const langtext = translations[savedLang];
+  if (text) {
+    document.getElementById('welcomeText').innerText = text.welcome;
+    document.getElementById('navDashboard').innerText = text.navDashboard;
+    document.getElementById('navOrders').innerText = text.navOrders;
+    document.getElementById('navSettings').innerText = text.navSettings;
+    document.getElementById('navLogout').innerText = text.navLogout;
+  }
+</script>
+
+<script>
+  // Load email and photo from localStorage
+  const savedEmail = localStorage.getItem('userEmail') || 'guest@example.com';
+  const savedPhoto = localStorage.getItem('userPhoto');
+
+  document.getElementById('userEmail').innerText = savedEmail;
+  if (savedPhoto) {
+    document.getElementById('profilePhoto').src = savedPhoto;
+  }
+
+  // Upload photo and save
+  function uploadPhoto() {
+    const file = document.getElementById('photoInput').files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const dataUrl = e.target.result;
+      document.getElementById('profilePhoto').src = dataUrl;
+      localStorage.setItem('userPhoto', dataUrl);
+    };
+
+    if (file) reader.readAsDataURL(file);
+  }
+
+  // Remove photo from localStorage
+  function removePhoto() {
+    localStorage.removeItem('userPhoto');
+    document.getElementById('profilePhoto').src = 'default.jpg'; // Set to your default image
+  }
+  // ✅ Update email and save to localStorage
+  function updateEmail() {
+    const newEmail = document.getElementById('emailInput').value.trim();
+    if (newEmail.includes('@') && newEmail.includes('.')) {
+      document.getElementById('userEmail').innerText = newEmail;
+      localStorage.setItem('userEmail', newEmail);
+      alert('✅ Email updated!');
+    } else {
+      alert('❌ Please enter a valid email address');
+    }
+  }
+</script>
+
+<div id="ai-chatbot">
+  🤖 Need Help? Chat with us!
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>☕ Bong Café</h2>
+      <p>Where every sip tells a story.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Bong Café. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bong Café Menu Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fefcf8;
+      color: #333;
+    }
+    .menu-title {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      font-size: 2.5em;
+      margin: 30px 0 10px;
+      color: #ff6f61;
+    }
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-card {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-in;
+    }
+    .carousel-card h3 {
+      text-align: center;
+      color: #d94a1f;
+      font-family: 'Lobster', cursive;
+    }
+    .carousel-card .menu-item {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+    }
+    .carousel-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    .food-info h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .food-info p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #777;
+    }
+    .badge {
+      background: #ff9800;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+    .carousel-btn:hover {
+      background: #ff3d3d;
+    }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <section class="menu-carousel" id="menu">
+    <h2 class="menu-title">🍽️ Our Menu (AI Carousel)</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">⟨</button>
+      <div class="carousel-track">
+        <!-- Bengali -->
+        <div class="carousel-card">
+          <h3>Bengali Delights</h3>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/1414729614/photo/sorshe-illish-or-hilsa-fish.webp" alt="Shorshe Ilish">
+            <div class="food-info">
+              <h4>Shorshe Ilish <span class="badge">Special</span></h4>
+              <p>₹350 | 1 plate</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1720787066625-ba5e3e3b8ca7" alt="Kosha Mangsho">
+            <div class="food-info">
+              <h4>Kosha Mangsho</h4>
+              <p>₹280 | 1 bowl</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/1927881082/photo/delicious-anchovy-fish-fry.webp" alt="Beguni">
+            <div class="food-info">
+              <h4>Beguni</h4>
+              <p>₹60 | 4 pcs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Punjabi -->
+        <div class="carousel-card">
+          <h3>Punjabi Tadka</h3>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398" alt="Butter Chicken">
+            <div class="food-info">
+              <h4>Butter Chicken <span class="badge">Special</span></h4>
+              <p>₹320 | 1 bowl</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/979914742/photo/chole-bhature.webp" alt="Chole Bhature">
+            <div class="food-info">
+              <h4>Chole Bhature</h4>
+              <p>₹120 | 1 plate</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/2181204121/photo/a-closeup-picture-of-a-tasty-panner-tikka.webp" alt="Paneer Tikka">
+            <div class="food-info">
+              <h4>Paneer Tikka</h4>
+              <p>₹150 | 6 pcs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- American -->
+        <div class="carousel-card">
+          <h3>American Bites</h3>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1603893662172-99ed0cea2a08" alt="Cheese Burger">
+            <div class="food-info">
+              <h4>Cheese Burger <span class="badge">Special</span></h4>
+              <p>₹180 | 1 pc</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1579637386361-e393367281da" alt="Grilled Sandwich">
+            <div class="food-info">
+              <h4>Grilled Sandwich</h4>
+              <p>₹120 | 1 pc</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Offers -->
+        <div class="carousel-card">
+          <h3>Today's Special</h3>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1652595802737-56d08ad31f09" alt="Combo Thali">
+            <div class="food-info">
+              <h4>Combo Thali <span class="badge">Offer</span></h4>
+              <p>₹199 | Full Meal</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1642522538458-0ece1670d495" alt="Mango Cold Brew">
+            <div class="food-info">
+              <h4>Mango Cold Brew</h4>
+              <p>₹90 | 1 glass</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rathyatra Special -->
+        <div class="carousel-card">
+          <h3>Rathyatra Special</h3>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/1175706754/photo/closeup-shot-of-a-puja-veg-food-thali.webp" alt="Khichuri Bhog">
+            <div class="food-info">
+              <h4>Khichuri Bhog <span class="badge">Special</span></h4>
+              <p>₹99 | Moong dal & ghee rice</p>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/2166556793/photo/rendang-jengkol.webp" alt="Chhena Poda">
+            <div class="food-info">
+              <h4>Chhena Poda</h4>
+              <p>₹89 | Odisha's delight</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn next">⟩</button>
+    </div>
+  </section>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bong Café</title>
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <header class="top-bar">
+    <p>Mon - Sat: 9:00 am - 19:00 pm / Closed on Weekends</p>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">☕ Bong Café</div>
+    <ul class="nav-links">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="btn glow">Book a Table</button>
+  </nav>
+<section class="countdown-offer">
+  <h2>🎉 Rath Yatra Special Offer 🎉</h2>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <p>Offer ends in:</p>
+  <div id="countdown">
+    <span id="days">00</span> Days
+    <span id="hours">00</span> Hours
+    <span id="minutes">00</span> Minutes
+    <span id="seconds">00</span> Seconds
+  </div>
+  <br />
+<button class="offer-btn" onclick="document.getElementById('rath-menu').scrollIntoView({ behavior: 'smooth' });">
+  👉 Click Here to View Menu
+</button>
+
+</section>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>WELCOME TO BONG CAFÉ</h2>
+      <h1 class="animate-text">Enjoy Your Day With Tasty and Healthier food </h1>
+      <p>Start your day with the rich aroma and warmth of our finest brew. Taste tradition with a twist.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">Book a Table</a>
+        <a href="#" class="btn-light">Visit Our Shop</a>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMGZvb2R8ZW58MHx8MHx8fDA%3D" alt="Cafe Interior">
+    </div>
+    <div class="about-text">
+      <h2>About Bong Café</h2>
+      <p>
+        At Bong Café, we blend tradition with taste. Rooted in the warmth of Bengali hospitality, our café brings you the perfect cup of comfort. 
+        From locally sourced beans to a calm ambiance, we create a space where stories are shared and memories brewed.
+      </p>
+      <p>
+        Whether you're craving your morning espresso or a relaxing afternoon latte, our baristas are here to serve you with passion and a smile.
+      </p>
+    </div>
+  </div>
+</section>
+    
+ 
+<section class="menu-carousel" id="menu">
+  <h2 class="menu-title">🍽️ Our Menu</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn prev">⟨</button>
+
+    <div class="carousel-track">
+
+      <!-- Bengali -->
+      <di class="carousel-card">
+        <h3>Bengali Delights</h3>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1414729614/photo/sorshe-illish-or-hilsa-fish.webp?a=1&b=1&s=612x612&w=0&k=20&c=FMfxkHx3QuPkQEQwAtxQNp4ylSLdH0eQA8pWgs_WWOQ=" alt="Shorshe Ilish">
+          <div class="food-info">
+            <h4>Shorshe Ilish <span class="badge">Special</span></h4>
+            <p>₹350 | 1 plate</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1720787066625-ba5e3e3b8ca7" alt="Kosha Mangsho">
+          <div class="food-info">
+            <h4>Kosha Mangsho</h4>
+            <p>₹280 | 1 bowl</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1927881082/photo/delicious-anchovy-fish-fry-crispy-and-golden-brown-served-on-a-plate-with-garnish.webp?a=1&b=1&s=612x612&w=0&k=20&c=oTbDYmy9K_ZFu2KOoJViEDtvLzwCiOmijja7OTMeKaA=" alt="Beguni">
+          <div class="food-info">
+            <h4>Beguni</h4>
+            <p>₹60 | 4 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1680764955303-81618ecb67b5" alt="Mishti Doi">
+          <div class="food-info">
+            <h4>Mishti Doi</h4>
+            <p>₹40 | 1 cup</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Punjabi -->
+      <div class="carousel-card">
+        <h3>Punjabi Tadka</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398" alt="Butter Chicken">
+          <div class="food-info">
+            <h4>Butter Chicken <span class="badge">Special</span></h4>
+            <p>₹320 | 1 bowl</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/979914742/photo/chole-bhature-or-chick-pea-curry-and-fried-puri-served-in-terracotta-crockery-over-white.webp?a=1&b=1&s=612x612&w=0&k=20&c=8pmBVIcNb-GIFnsBT0sYqfy-YtzNq7pOqc6lQZgFOPo=" alt="Chole Bhature">
+          <div class="food-info">
+            <h4>Chole Bhature</h4>
+            <p>₹120 | 1 plate</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/2181204121/photo/a-closeup-picture-of-a-tasty-panner-tikka-served-in-a-plate-at-a-restaurant.webp?a=1&b=1&s=612x612&w=0&k=20&c=Z0lv5mXv1etq0yF2Zf-Io6o6FqM9ndD9Iy-BRiG6A_E=" alt="Paneer Tikka">
+          <div class="food-info">
+            <h4>Paneer Tikka</h4>
+            <p>₹150 | 6 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1692616717087-54ee6f6c7e8f" alt="Lassi">
+          <div class="food-info">
+            <h4>Lassi</h4>
+            <p>₹60 | 1 glass</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- American -->
+      <div class="carousel-card">
+        <h3>American Bites</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1603893662172-99ed0cea2a08" alt="Cheese Burger">
+          <div class="food-info">
+            <h4>Cheese Burger <span class="badge">Special</span></h4>
+            <p>₹180 | 1 pc</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1579637386361-e393367281da" alt="Grilled Sandwich">
+          <div class="food-info">
+            <h4>Grilled Sandwich</h4>
+            <p>₹120 | 1 pc</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://plus.unsplash.com/premium_photo-1672774750509-bc9ff226f3e8" alt="French Fries">
+          <div class="food-info">
+            <h4>French Fries</h4>
+            <p>₹90 | Medium</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767" alt="Chocolate Shake">
+          <div class="food-info">
+            <h4>Chocolate Shake</h4>
+            <p>₹100 | 1 glass</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Offers -->
+      <div class="carousel-card">
+        <h3>Today's Special</h3>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1652595802737-56d08ad31f09" alt="Combo Thali">
+          <div class="food-info">
+            <h4>Combo Thali <span class="badge">Offer</span></h4>
+            <p>₹199 | Full Meal</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1642522538458-0ece1670d495" alt="Mango Cold Brew">
+          <div class="food-info">
+            <h4>Mango Cold Brew</h4>
+            <p>₹90 | 1 glass</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1283129519/photo/indian-bengali-sweet-baked-rasgulla-for-sale-at-a-sweet-shop.webp?a=1&b=1&s=612x612&w=0&k=20&c=bAzjP4f8UlSYi8efa_CU8nsTDaNsWSkcDgd5Tx0Zw_E=" alt="Baked Rasgulla">
+          <div class="food-info">
+            <h4>Baked Rasgulla</h4>
+            <p>₹70 | 2 pcs</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://images.unsplash.com/photo-1666196389175-630e3b80ad91" alt="Latte BOGO">
+          <div class="food-info">
+            <h4>Buy 1 Get 1 Latte <span class="badge">BOGO</span></h4>
+            <p>₹150 | 2 cups</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rathyatra Special -->
+<div class="carousel-card" id="rath-menu">
+  <div class="carousel-title">
+    <h3>Rathyatra Special</h3>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1175706754/photo/closeup-shot-of-a-puja-veg-food-thali.webp?a=1&b=1&s=612x612&w=0&k=20&c=Aj5FtSyD5tG_8al37iM_rTPr78hplNpqhF_O7rs8ovw=" alt="Khichuri Bhog">
+          <div class="food-info">
+            <h4>Khichuri Bhog <span class="badge">Special</span></h4>
+            <p>₹99 | Moong dal & ghee rice</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/1927881082/photo/delicious-anchovy-fish-fry-crispy-and-golden-brown-served-on-a-plate-with-garnish.webp?a=1&b=1&s=612x612&w=0&k=20&c=oTbDYmy9K_ZFu2KOoJViEDtvLzwCiOmijja7OTMeKaA=" alt="Beguni">
+          <div class="food-info">
+            <h4>Beguni</h4>
+            <p>₹49 | Eggplant fritters</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://media.istockphoto.com/id/2166556793/photo/rendang-jengkol-or-dogfruit-simmered-in-spices-and-coconut-milk-indonesian-traditional.webp?a=1&b=1&s=612x612&w=0&k=20&c=gBoT8gJMoX_UcXRunRsN33au89gEZudUHZ_7i8mmFVc=" alt="Chhena Poda">
+          <div class="food-info">
+            <h4>Chhena Poda</h4>
+            <p>₹89 | Odisha's sweet delight</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6Qr_fuvDoHpazjLzqfwCurR3-C0-0P5XjA" alt="Pakhala Bhata">
+          <div class="food-info">
+            <h4>Pakhala Bhata <span class="badge">Cooler</span></h4>
+            <p>₹119 | Fermented rice platter</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-btn next">⟩</button>
+  </div>
+</section>

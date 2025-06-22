@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bengali Flavors You Must Try | Bong Café</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #fff4e6, #ffe0cc);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      animation: fadeInBody 1s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .blog-container {
+      max-width: 850px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: slideUp 1s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #3e2723;
+      text-align: center;
+    }
+
+    .blog-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-img:hover {
+      transform: scale(1.03);
+    }
+
+    .blog-img.ai-image {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 0 25px rgba(255, 165, 0, 0.6);
+      transition: all 0.5s ease;
+      border: 4px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #ffa500, #ff4500) border-box;
+    }
+
+    .blog-img.ai-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 115, 0, 0.9);
+      border: 4px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #fcb045, #fd1d1d, #833ab4) border-box;
+    }
+
+    @media (max-width: 500px) {
+      .blog-img.ai-image {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    p {
+      line-height: 1.7;
+      color: #444;
+      font-size: 16px;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 25px;
+      text-decoration: none;
+      color: #b34700;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    a.back-link:hover {
+      border-color: #b34700;
+      transform: translateX(-3px);
+    }
+
+    /* AI chatbot corner */
+    .ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1c1c1c;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeInChat 1.5s ease;
+    }
+
+    @keyframes fadeInChat {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .typing-title::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-container">
+    <h1 class="typing-title" id="titleText"></h1>
+
+    <img src="https://media.istockphoto.com/id/1480296623/photo/aiburo-bhat-ritual-food-arrangement-bengali-wedding-ritual.webp?a=1&b=1&s=612x612&w=0&k=20&c=VCys-Oz2CFhW3reOgDLrL15VL65PfNm73a6x20AgRIQ="
+         alt="Bengali Food" class="blog-img ai-image">
+
+    <p>
+     <i> Bengali cuisine is known for its subtle yet fiery flavors and use of mustard oil, panch phoron (a blend of five spices), and fresh fish.
+      Mustard-based gravies like <strong>‘Shorshe Ilish’</strong> (Hilsa in mustard) and classics like <strong>‘Kosha Mangsho’</strong> (slow-cooked mutton curry) are signature dishes that reflect Bengal’s culinary richness.
+      </i>
+    </p>
+    <p>
+     <i> Sweet lovers can’t miss <strong>“Mishti Doi”</strong>, <strong>“Rosogolla”</strong>, and <strong>“Sandesh”</strong>, which are crafted with love and tradition.
+      Whether it’s a festive thali or a casual evening snack, Bengali food brings together warmth, nostalgia, and a punch of bold flavors.
+      </i>
+    </p>
+    <p>
+      Come experience this journey at Bong Café. We serve tradition on a plate.
+    </p>
+
+    <a href="index2.html#blog" class="back-link">← Back to Blog</a>
+  </div>
+
+  <div class="ai-chatbot">
+    🤖 Need help exploring more flavors?
+  </div>
+
+  <script>
+    const text = "Bengali Flavors You Must Try";
+    let i = 0;
+    const speed = 80;
+    const target = document.getElementById("titleText");
+
+    function typeWriter() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>

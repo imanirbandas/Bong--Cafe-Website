@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Bong Café</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background with blur */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1509855051487-8f6fdaf5871d?w=1600') no-repeat center center;
+      background-size: cover;
+      filter: blur(6px);
+      z-index: -1;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      animation: floatIn 1.2s ease forwards;
+      width: 340px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .login-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+.login-box h2 {
+  color: #ad76cf;
+  margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 6px #b388eb, 0 0 12px #ab47bc;
+  }
+  to {
+    text-shadow: 0 0 12px #f7f2eb, 0 0 20px #e9e287;
+  }
+}
+
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      background: rgba(255,255,255,0.9);
+      transition: all 0.3s ease;
+    }
+
+    .login-box input:focus {
+      border-color: #6a1b9a;
+      box-shadow: 0 0 6px #6a1b9a88;
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #6a1b9a, #ab47bc);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: linear-gradient(to right, #4a148c, #7b1fa2);
+      box-shadow: 0 0 12px #c471ed;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+.link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #eee;
+}
+
+.link a {
+  color: #03dac6; /* fresh mint green shade */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link a:hover {
+  color: #00c2a6; /* deeper shade on hover */
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Login to Bong Café</h2>
+    <input type="email" id="loginEmail" placeholder="Enter your Gmail" required />
+    <input type="password" id="loginPassword" placeholder="Enter your password" required />
+    <button onclick="login()">Login</button>
+    <div id="loginError" class="error"></div>
+    <div class="link">New user? <a href="signup.html">Create an account</a></div>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+      const error = document.getElementById('loginError');
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (!user) {
+        error.textContent = '❌ Email or password incorrect';
+        return;
+      }
+
+      alert('✅ Login successful!');
+      window.location.href = 'index2.html';
+    }
+  </script>
+
+</body>
+</html>

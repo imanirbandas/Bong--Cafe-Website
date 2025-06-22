@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Bong Cafe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #fffbe6, #ffe0b2);
+      color: #333;
+    }
+    .navbar {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      color: #bf360c;
+      font-size: 1.8rem;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #e64a19;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    header h2 {
+      font-size: 2.8rem;
+      color: #5d4037;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 10px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-content {
+      padding: 20px;
+    }
+    .blog-content h3 {
+      color: #bf360c;
+      margin-bottom: 10px;
+    }
+    .blog-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .read-more {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      color: #d84315;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .read-more:hover {
+      border-color: #d84315;
+      transform: translateX(3px);
+    }
+    .ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3e2723;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      animation: fadeInUp 1.2s ease;
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 2rem;
+      }
+      .blog-content p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Bong Cafe</h1>
+    <ul>
+      <li><a href="index2.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a class="active" href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <h2>Latest From Our Kitchen</h2>
+    <p>Delicious stories, recipes, and behind-the-scenes from Bong Cafe</p>
+  </header>
+
+  <section class="blog-grid">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1740593348228-4e4a97e66a17?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJlbmdhbGklMjBjdWx0dXJlJTIwYnJpZGdlJTIwa29sa2F0YXxlbnwwfHwwfHx8MA%3D%3D" alt="Blog 1">
+      <div class="blog-content">
+        <h3>Bengali Flavors You Must Try</h3>
+        <p>Explore the richness of mustard, panch phoron, and sweets from Bengal's culinary heritage.</p>
+        <a href="blog1.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1746494557235-9e99f3193101?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHJlc3R1cmFudCUyMGNoZWZ8ZW58MHx8MHx8fDA%3D" alt="Blog 2">
+      <div class="blog-content">
+        <h3>Behind the Scenes of Bong Cafe</h3>
+        <p>Meet our chefs, their inspiration, and how we make sure every dish is perfect for you.</p>
+        <a href="blog2.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1703553591265-91e21fca98ad?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lYWxzfGVufDB8fDB8fHww" alt="Blog 3">
+      <div class="blog-content">
+        <h3>Healthy Yet Tasty Meals</h3>
+        <p>Discover how we balance flavor and nutrition to give you healthy, satisfying meals.</p>
+        <a href="blog3.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1743501948051-b0c264173f97?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29ya2luZyUyMGluZGlhbiUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Blog 4">
+      <div class="blog-content">
+        <h3>Our Journey</h3>
+        <p>From a small idea to a beloved cafe—read how Bong Cafe became your favorite hangout.</p>
+        <a href="blog4.html" class="read-more">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ai-chatbot">🤖 Ask AI: Menu, Timings, More</div>
+</body>
+</html>
+

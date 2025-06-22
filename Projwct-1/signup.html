@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Bong Café</title>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image with blur using ::before */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=1600') no-repeat center center;
+  background-size: cover;
+  filter: blur(6px);
+  z-index: -1;
+  animation: fadeBg 2s ease-in-out;
+}
+
+@keyframes fadeBg {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.signup-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: floatIn 1.2s ease forwards;
+  width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.signup-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.7s;
+}
+
+.signup-box input:focus {
+  border-color: #6a1b9a;
+  box-shadow: 0 0 5px #6a1b9a88;
+  outline: none;
+}
+
+.signup-box button {
+  background: linear-gradient(to right, #6a1b9a, #ab47bc);
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.5s, box-shadow 0.4s;
+}
+
+.signup-box button:hover {
+  background: linear-gradient(to right, #4a148c, #7b1fa2);
+  box-shadow: 0 0 12px #c471ed;
+}
+
+.signup-box h2 {
+  color: #f7f4f8;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2>Create Account</h2>
+    <input type="email" id="signupEmail" placeholder="Enter Gmail only" required>
+    <input type="password" id="signupPassword" placeholder="Enter password" required>
+    <button onclick="signup()">Sign Up</button>
+    <div id="signupError" class="error"></div>
+    <div class="link">Already have an account? <a href="login.html">Login</a></div>
+  </div>
+
+  <script>
+    function signup() {
+      const email = document.getElementById('signupEmail').value.trim();
+      const password = document.getElementById('signupPassword').value.trim();
+      const error = document.getElementById('signupError');
+
+      if (!email.endsWith('@gmail.com')) {
+        error.textContent = 'Only Gmail addresses are allowed.';
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const exists = users.find(u => u.email === email);
+
+      if (exists) {
+        error.textContent = 'User already exists!';
+        return;
+      }
+
+      users.push({ email, password });
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('✅ Account created successfully! Now please login.');
+      window.location.href = 'login.html';
+    }
+  </script>
+
+</body>
+</html>
